@@ -1,0 +1,53 @@
+<!doctype html>
+<!--
+  Copyright 2018 Google LLC
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<html ng-app="kanaPractice">
+  <head>
+    <title>Japanese kana &rarr; rōmaji practice</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="data.js" type="text/javascript"></script>
+    <script src="practice.js" type="text/javascript"></script>
+    <link href="practice.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="practice" ng-controller="KanaPracticeCtrl">
+      <div>
+        <span class="heading">Japanese kana &rarr; rōmaji</span><br>
+        Type in the rōmaji and press <kbd>Enter</kbd><br>
+      </div>
+      <br>
+
+      <span ng-show="countTotal > 0">
+				correct: {{countCorrect}} of {{countTotal}} ({{countCorrect / countTotal * 100 | number:0}}%)
+      </span>
+      <br>
+
+      <form ng-submit="checkUserInput()">
+        <span class="japanese">{{japanese}}</span><br>
+        <span class="correctAnswer">{{correctAnswer}}</span>
+        <br><br>
+
+        <input type="text" ng-model="romaji" id="romaji" width=5>
+
+        <br><br>
+        <input type="radio" ng-model="kana" value="hiragana">ひらがな
+        <input type="radio" ng-model="kana" value="katakana">カタカナ
+      </form>
+    </div>
+  </body>
+</html>

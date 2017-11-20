@@ -1,0 +1,532 @@
+# Copyright 2018 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# vim: set fileencoding=utf-8 :
+# -*- coding: utf-8 -*-
+#
+# This file provides a mapping of Hiragana and Katakana to Rōmaji.
+#
+# Note that "ro" is already taken as the ISO-639-1 code for Romanian and "rm" is
+# already taken as the code for Romansh, so "rj" is being used here instead as
+# it is not used by any other language at this time.
+#
+# Legend:
+# - ja: Japanese
+# - rj: Rōmaji
+
+hiragana:
+  monographs:
+    # vowels
+    - ja: あ
+      rj: a
+    - ja: い
+      rj: i
+    - ja: う
+      rj: u
+    - ja: え
+      rj: e 
+    - ja: お
+      rj: o 
+    # k*
+    - ja: か
+      rj: ka
+    - ja: き
+      rj: ki 
+    - ja: く
+      rj: ku 
+    - ja: け
+      rj: ke 
+    - ja: こ
+      rj: ko
+    # s*
+    - ja: さ
+      rj: sa
+    - ja: し
+      rj: shi
+    - ja: す
+      rj: su
+    - ja: せ
+      rj: se
+    - ja: そ
+      rj: so
+    # t*
+    - ja: た
+      rj: ta
+    - ja: ち
+      rj: chi
+    - ja: つ
+      rj: tsu
+    - ja: て
+      rj: te
+    - ja: と
+      rj: to
+    # n*
+    - ja: な
+      rj: na
+    - ja: に
+      rj: ni
+    - ja: ぬ
+      rj: nu
+    - ja: ね
+      rj: ne
+    - ja: の
+      rj: "no"  # PyYAML parses raw `no` as False
+    # h*
+    - ja: は
+      rj: ha  # pronounced [wa] as a particle
+    - ja: ひ
+      rj: hi
+    - ja: ふ
+      rj: fu
+    - ja: へ
+      rj: he  # pronounced [e] as a particle
+    - ja: ほ
+      rj: ho
+    # m*
+    - ja: ま
+      rj: ma
+    - ja: み
+      rj: mi
+    - ja: む
+      rj: mu
+    - ja: め
+      rj: me
+    - ja: も
+      rj: mo
+    # y*
+    - ja: や
+      rj: ya
+    - ja: ゆ
+      rj: yu
+    - ja: よ
+      rj: yo
+    # r*
+    - ja: ら
+      rj: ra
+    - ja: り
+      rj: ri
+    - ja: る
+      rj: ru
+    - ja: れ
+      rj: re 
+    - ja: ろ
+      rj: ro
+    # w*
+    - ja: わ
+      rj: wa
+    - ja: ゐ
+      rj: wi
+      obsolete: true  # https://en.wikipedia.org/wiki/Wi_(kana)
+    - ja: ゑ
+      rj: we
+      obsolete: true  # https://en.wikipedia.org/wiki/We_(kana)
+    - ja: を
+      rj: wo
+    # n
+    - ja: ん
+      rj: n
+
+  monograph_diacritics:
+    # g*
+    - ja: が
+      rj: ga
+    - ja: ぎ
+      rj: gi
+    - ja: ぐ
+      rj: gu
+    - ja: げ
+      rj: ge
+    - ja: ご
+      rj: go
+    # z*
+    - ja: ざ
+      rj: za
+    - ja: じ
+      rj: ji
+    - ja: ず
+      rj: zu
+    - ja: ぜ
+      rj: ze
+    - ja: ぞ
+      rj: zo
+    # d*
+    - ja: だ
+      rj: da
+    - ja: ぢ
+      rj: di
+    - ja: づ
+      rj: du
+    - ja: で
+      rj: de
+    - ja: ど
+      rj: do
+    # b*
+    - ja: ば
+      rj: ba
+    - ja: び
+      rj: bi
+    - ja: ぶ
+      rj: bu
+    - ja: べ
+      rj: be
+    - ja: ぼ
+      rj: bo
+    # p*
+    - ja: ぱ
+      rj: pa
+    - ja: ぴ
+      rj: pi
+    - ja: ぷ
+      rj: pu
+    - ja: ぺ
+      rj: pe
+    - ja: ぽ
+      rj: po
+  digraphs:
+    # ky*
+    - ja: きゃ
+      rj: kya
+    - ja: きゅ
+      rj: kyu
+    - ja: きょ
+      rj: kyo
+    # sh*
+    - ja: しゃ
+      rj: sha
+    - ja: しゅ
+      rj: shu
+    - ja: しょ
+      rj: sho
+    # ch*
+    - ja: ちゃ
+      rj: cha
+    - ja: ちゅ
+      rj: chu
+    - ja: ちょ
+      rj: cho
+    # ny*
+    - ja: にゃ
+      rj: nya
+    - ja: にゅ
+      rj: nyu
+    - ja: にょ
+      rj: nyo
+    # hy*
+    - ja: ひゃ
+      rj: hya
+    - ja: ひゅ
+      rj: hyu
+    - ja: ひょ
+      rj: hyo
+    # my*
+    - ja: みゃ
+      rj: mya
+    - ja: みゅ
+      rj: myu
+    - ja: みょ
+      rj: myo
+    # ry*
+    - ja: りゃ
+      rj: rya
+    - ja: りゅ
+      rj: ryu
+    - ja: りょ
+      rj: ryo
+  digraph_diacritics:
+    # Dakuten
+    # g* -> gy*
+    - ja: ぎゃ
+      rj: gya
+    - ja: ぎゅ
+      rj: gyu
+    - ja: ぎょ
+      rj: gyo
+    # z* -> j*
+    - ja: じゃ
+      rj: ja
+    - ja: じゅ
+      rj: ju
+    - ja: じょ
+      rj: jo
+    # b* -> by*
+    - ja: びゃ
+      rj: bya
+    - ja: びゅ
+      rj: byu
+    - ja: びょ
+      rj: byo
+    # Handakuten
+    # p* -> py*
+    - ja: ぴゃ
+      rj: pya
+    - ja: ぴゅ
+      rj: pyu
+    - ja: ぴょ
+      rj: pyo
+
+katakana:
+  monographs:
+    # vowels
+    - ja: あ
+      rj: a
+    - ja: イ
+      rj: i
+    - ja: ウ
+      rj: u
+    - ja: エ
+      rj: e 
+    - ja: オ
+      rj: o 
+    # k*
+    - ja: カ
+      rj: ka
+    - ja: キ
+      rj: ki 
+    - ja: ク
+      rj: ku 
+    - ja: ケ
+      rj: ke 
+    - ja: コ
+      rj: ko
+    # s*
+    - ja: サ
+      rj: sa
+    - ja: シ
+      rj: shi
+    - ja: ス
+      rj: su
+    - ja: セ
+      rj: se
+    - ja: ソ
+      rj: so
+    # t*
+    - ja: タ
+      rj: ta
+    - ja: チ
+      rj: chi
+    - ja: ツ
+      rj: tsu
+    - ja: テ
+      rj: te
+    - ja: ト
+      rj: to
+    # n*
+    - ja: ナ
+      rj: na
+    - ja: ニ
+      rj: ni
+    - ja: ヌ
+      rj: nu
+    - ja: ネ
+      rj: ne
+    - ja: ノ
+      rj: "no"  # PyYAML parses raw `no` as False
+    # h*
+    - ja: ハ
+      rj: ha  # pronounced [wa] as a particle
+    - ja: ヒ
+      rj: hi
+    - ja: フ
+      rj: fu
+    - ja: ヘ
+      rj: he  # pronounced [e] as a particle
+    - ja: ホ
+      rj: ho
+    # m*
+    - ja: マ
+      rj: ma
+    - ja: ミ
+      rj: mi
+    - ja: ム
+      rj: mu
+    - ja: メ
+      rj: me
+    - ja: モ
+      rj: mo
+    # y*
+    - ja: ヤ
+      rj: ya
+    - ja: ユ
+      rj: yu
+    - ja: ヨ
+      rj: yo
+    # r*
+    - ja: ラ
+      rj: ra
+    - ja: リ
+      rj: ri
+    - ja: ル
+      rj: ru
+    - ja: レ
+      rj: re 
+    - ja: ロ
+      rj: ro
+    # w*
+    - ja: ワ
+      rj: wa
+    - ja: ヰ
+      rj: wi
+      obsolete: true  # https://en.wikipedia.org/wiki/Wi_(kana)
+    - ja: ヱ
+      rj: we
+      obsolete: true  # https://en.wikipedia.org/wiki/We_(kana)
+    - ja: ヲ
+      rj: wo
+    # n
+    - ja: ン
+      rj: n
+
+  monograph_diacritics:
+    # g*
+    - ja: ガ
+      rj: ga
+    - ja: ギ
+      rj: gi
+    - ja: グ
+      rj: gu
+    - ja: ゲ
+      rj: ge
+    - ja: ゴ
+      rj: go
+    # z*
+    - ja: ザ
+      rj: za
+    - ja: ジ
+      rj: ji
+    - ja: ズ
+      rj: zu
+    - ja: ゼ
+      rj: ze
+    - ja: ゾ
+      rj: zo
+    # d*
+    - ja: ダ
+      rj: da
+    - ja: ヂ
+      rj: di
+    - ja: ヅ
+      rj: du
+    - ja: デ
+      rj: de
+    - ja: ド
+      rj: do
+    # b*
+    - ja: バ
+      rj: ba
+    - ja: ビ
+      rj: bi
+    - ja: ブ
+      rj: bu
+    - ja: ベ
+      rj: be
+    - ja: ボ
+      rj: bo
+    # p*
+    - ja: パ
+      rj: pa
+    - ja: ピ
+      rj: pi
+    - ja: プ
+      rj: pu
+    - ja: ペ
+      rj: pe
+    - ja: ポ
+      rj: po
+  digraphs:
+    # ky*
+    - ja: キャ
+      rj: kya
+    - ja: キュ
+      rj: kyu
+    - ja: キョ
+      rj: kyo
+    # sh*
+    - ja: シャ
+      rj: sha
+    - ja: シュ
+      rj: shu
+    - ja: ショ
+      rj: sho
+    # ch*
+    - ja: チャ
+      rj: cha
+    - ja: チュ
+      rj: chu
+    - ja: チョ
+      rj: cho
+    # ny*
+    - ja: ニャ
+      rj: nya
+    - ja: ニュ
+      rj: nyu
+    - ja: ニョ
+      rj: nyo
+    # hy*
+    - ja: ヒャ
+      rj: hya
+    - ja: ヒュ
+      rj: hyu
+    - ja: ヒオ
+      rj: hyo
+    # f*
+    - ja: ファ
+      rj: fa
+    # my*
+    - ja: ミャ
+      rj: mya
+    - ja: ミュ
+      rj: myu
+    - ja: ミョ
+      rj: myo
+    # ry*
+    - ja: リャ
+      rj: rya
+    - ja: リュ
+      rj: ryu
+    - ja: リョ
+      rj: ryo
+    # w*
+    - ja: ウォ
+      rj: wo
+  digraph_diacritics:
+    # Dakuten
+    # g* -> gy*
+    - ja: ギャ
+      rj: gya
+    - ja: ギュ
+      rj: gyu
+    - ja: ギョ
+      rj: gyo
+    # z* -> j*
+    - ja: ジャ
+      rj: ja
+    - ja: ジュ
+      rj: ju
+    - ja: ジョ
+      rj: jo
+    # b* -> by*
+    - ja: ビャ
+      rj: bya
+    - ja: ビュ
+      rj: byu
+    - ja: ビョ
+      rj: byo
+    # Handakuten
+    # p* -> py*
+    - ja: ピャ
+      rj: pya
+    - ja: ピュ
+      rj: pyu
+    - ja: ピョ
+      rj: pyo

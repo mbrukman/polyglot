@@ -1,0 +1,75 @@
+<!doctype html>
+<html ng-app="kanaConvertTestApp">
+<head>
+  <title>Japanese kana &rarr; rōmaji conversion test</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+  <script src="../data.js"></script>
+  <script src="convert.js"></script>
+  <script src="convert_test.js"></script>
+
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    table, th, tr, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Kana to Romaji test</h1>
+
+<div ng-controller="KanaConvertTestCtrl">
+  <!-- Summary -->
+  <div>
+    Overall status:
+    <b ng-show="success" style="color:green">PASSED</b>
+    <b ng-hide="success" style="color:red">FAILED</b>
+  </div>
+
+  <br>
+
+  <!-- Detailed per-test status. -->
+  <table>
+    <tr>
+      <th>Status</th>
+      <th>Kana</th>
+      <th>Rōmaji (expected)</th>
+      <th>Rōmaji (actual, if differs from expected)</th>
+      <th>Error (if any)</th>
+    </tr>
+    <tr ng-repeat="result in results">
+      <td>
+        <b style="color:green" ng-show="result.success">SUCCESS</b>
+        <b style="color:red" ng-hide="result.success">FAILED</b>
+      </td>
+
+      <td>{{result.kana}}</td>
+      <td>{{result.expected}}</tt>
+      <td><span ng-hide="result.success">{{result.actual}}</span></td>
+      <td>{{result.error}}</td>
+    </tr>
+  </table>
+
+  <br>
+
+  <!-- Summary -->
+  <div>
+    Overall status:
+    <b ng-show="success" style="color:green">PASSED</b>
+    <b ng-hide="success" style="color:red">FAILED</b>
+  </div>
+
+</div>
+
+</body>
+</html>
