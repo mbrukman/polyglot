@@ -6,6 +6,7 @@ This tool will help you practice your knowledge of
 
 To start the practice session, you may use any of the following methods:
 
+* view the [live demo](https://mbrukman.github.io/polyglot/lang/ja/kana/practice.html), or
 * clone this repo and open `practice.html` in your browser, or
 * run `open.sh` from the command line (which will open a browser for you with
   the same file)
