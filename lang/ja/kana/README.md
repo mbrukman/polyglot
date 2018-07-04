@@ -20,5 +20,9 @@ by James Heisig, a website, or an app.
 
 Similar projects on the web:
 
-* https://realkana.com/ 
-* http://hiragana.training/
+* [Real Kana](https://realkana.com/)
+* [Hiragana training](http://hiragana.training/)
+
+Related mobile apps:
+
+* [Kanji Study](https://play.google.com/store/apps/details?id=com.mindtwisted.kanjistudy) for Android
