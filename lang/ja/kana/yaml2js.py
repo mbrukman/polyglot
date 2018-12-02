@@ -16,6 +16,7 @@
 
 """Convert data in YAML file to Javascript data declaration."""
 
+from __future__ import print_function
 import json
 import os
 import sys
@@ -92,7 +93,7 @@ def main(argv):
                 continue
             addUnique(katakana_ja2rj, item[JA], item[RJ])
 
-    print """\
+    print("""\
 // Copyright 2018 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -108,9 +109,9 @@ def main(argv):
 // limitations under the License.
 
 // DO NOT MODIFY MANUALLY; YOUR CHANGES WILL BE REVERTED!\
-"""
-    print '// This file was auto-generated via: "%s"' % ' '.join(argv)
-    print 'var DATA = %s;' % json.dumps(output_data, indent=2)
+""")
+    print('// This file was auto-generated via: "%s"' % ' '.join(argv))
+    print('var DATA = %s;' % json.dumps(output_data, indent=2))
 
 
 if __name__ == '__main__':
