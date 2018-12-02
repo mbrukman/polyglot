@@ -72,18 +72,21 @@ def main(argv):
         sys.exit(1)
 
     with open(argv[1]) as input_file:
-        data = yaml.safe_load(input_file.read())
+        input_data = yaml.safe_load(input_file.read())
 
-    hiragana_ja2rj = data[HIRAGANA][JA2RJ] = {}
+    output_data = {}
+    output_data[HIRAGANA] = {}
+    hiragana_ja2rj = output_data[HIRAGANA][JA2RJ] = {}
     for section in SECTIONS:
-        for item in data[HIRAGANA][section]:
+        for item in input_data[HIRAGANA][section]:
             if isObsolete(item):
                 continue
             addUnique(hiragana_ja2rj, item[JA], item[RJ])
 
-    katakana_ja2rj = data[KATAKANA][JA2RJ] = {}
+    output_data[KATAKANA] = {}
+    katakana_ja2rj = output_data[KATAKANA][JA2RJ] = {}
     for section in SECTIONS:
-        for item in data[KATAKANA][section]:
+        for item in input_data[KATAKANA][section]:
             if isObsolete(item):
                 continue
             addUnique(katakana_ja2rj, item[JA], item[RJ])
@@ -106,7 +109,7 @@ def main(argv):
 // DO NOT MODIFY MANUALLY; YOUR CHANGES WILL BE REVERTED!\
 """
     print '// This file was auto-generated via: "%s"' % ' '.join(argv)
-    print 'var DATA = %s;' % json.dumps(data, indent=2)
+    print 'var DATA = %s;' % json.dumps(output_data, indent=2)
 
 
 if __name__ == '__main__':
