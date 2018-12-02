@@ -44,11 +44,12 @@ JA2RJ = 'ja2rj'
 
 
 class DuplicateKanaError(Exception):
-    def __init__(self, error):
-        self.error = error
+    def __init__(self, message):
+        super(DuplicateKanaError, self).__init__(message)
+        self.message = message
 
     def __str__(self):
-        return unicode(self.error).encode('utf-8')
+        return unicode(self.message).encode('utf-8')
 
 
 def addUnique(dict, key, value):
