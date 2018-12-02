@@ -51,7 +51,7 @@ class DuplicateKanaError(Exception):
         return unicode(self.error).encode('utf-8')
 
 
-def ensureUniqueAndAdd(dict, key, value):
+def addUnique(dict, key, value):
     if key in dict:
         error = '\n'.join([
             'Duplicate entries:',
@@ -79,14 +79,14 @@ def main(argv):
         for item in data[HIRAGANA][section]:
             if isObsolete(item):
                 continue
-            ensureUniqueAndAdd(hiragana_ja2rj, item[JA], item[RJ])
+            addUnique(hiragana_ja2rj, item[JA], item[RJ])
 
     katakana_ja2rj = data[KATAKANA][JA2RJ] = {}
     for section in SECTIONS:
         for item in data[KATAKANA][section]:
             if isObsolete(item):
                 continue
-            ensureUniqueAndAdd(katakana_ja2rj, item[JA], item[RJ])
+            addUnique(katakana_ja2rj, item[JA], item[RJ])
 
     print """\
 // Copyright 2018 Google LLC
