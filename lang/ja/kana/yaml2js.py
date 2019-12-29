@@ -111,7 +111,8 @@ def main(argv):
 // DO NOT MODIFY MANUALLY; YOUR CHANGES WILL BE REVERTED!\
 """)
     print('// This file was auto-generated via: "%s"' % ' '.join(argv))
-    print('var DATA = %s;' % json.dumps(output_data, indent=2))
+    print('var DATA = %s;' % json.dumps(output_data, indent=2,
+        separators=(',', ': ')))
 
 
 if __name__ == '__main__':
