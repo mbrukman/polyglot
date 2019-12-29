@@ -1,4 +1,4 @@
-# Copyright 2018 Google LLC
+# Copyright 2019 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,13 +21,14 @@ YAML2JS = ./yaml2js.py
 
 .PHONY default:
 	$(VERB) echo "Available targets:"
-	$(VERB) echo "* kana: generate JavaScript file"
-	$(VERB) echo "* practice: open web page in browser"
+	$(VERB) echo "* vocab: generate JavaScript file"
+	$(VERB) echo "* test: open conversion test web page in browser"
 
-kana: kana.js
+vocab: vocab.js
 
-kana.js: kana.yaml Makefile $(YAML2JS)
+vocab.js: vocab.yaml Makefile $(YAML2JS)
 	$(VERB) $(YAML2JS) "$<" > "$@"
 
-practice: kana
-	$(VERB) ./open.sh practice.html
+test: vocab
+	$(VERB) ../open.sh convert_test.html
+

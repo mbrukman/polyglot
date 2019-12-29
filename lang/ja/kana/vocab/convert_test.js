@@ -18,41 +18,9 @@ kanaConvertTestApp.controller('KanaConvertTestCtrl', ['$scope', function($scope)
   $scope.results = [];
   $scope.success = true;
 
-  var HIRAGANA_TO_ROMAJI = [
-    ['ひらがな', 'hiragana'],
-    ['えんぴつ', 'enpitsu'],
-    ['いちがつ', 'ichigatsu'],
-    ['かぼちゃ', 'kabocha'],
-    ['しょうゆ', 'shouyu'],
-    ['しちめんちょう', 'shichimenchou'],
-    ['', ''],
-    ['', ''],
-    ['', ''],
-    ['', ''],
-  ];
-
-  var KATAKANA_TO_ROMAJI = [
-    ['カタカナ', 'katakana'],
-    ['ラジオ', 'rajio'],
-    ['テレビ', 'terebi'],
-    ['オレンジ', 'orenji'],
-    ['レモン', 'remon'],
-    ['マヨネーズ', 'mayoneezu'],
-    ['ビール', 'biiru'],
-    ['コーヒー', 'koohii'],
-    ['ソファー', 'sofaa'],
-    ['オーブン', 'oobun'],
-    ['ユーロ', 'yuuro'],
-    ['ウォン', 'won'],
-    ['', ''],
-    ['', ''],
-    ['', ''],
-    ['', ''],
-  ];
-
   var TEST_INPUTS = [
-    [HIRAGANA_TO_ROMAJI, hiragana2romaji],
-    [KATAKANA_TO_ROMAJI, katakana2romaji]
+    [VOCAB['hiragana'], hiragana2romaji],
+    [VOCAB['katakana'], katakana2romaji]
   ];
 
   for (var i in TEST_INPUTS) {
@@ -61,12 +29,8 @@ kanaConvertTestApp.controller('KanaConvertTestCtrl', ['$scope', function($scope)
 
     for (var i = 0; i < kana.length; ++i) {
       var result = {};
-      result.kana = kana[i][0];
-      // Skip empty placeholders.
-      if (result.kana.length == 0) {
-        continue;
-      }
-      result.expected = kana[i][1];
+      result.kana = kana[i]['ja'];
+      result.expected = kana[i]['rj'];
 
       try {
         result.actual = convertFn(result.kana);
