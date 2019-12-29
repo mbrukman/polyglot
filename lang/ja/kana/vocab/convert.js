@@ -55,7 +55,7 @@ function kana2romaji(kana, type, ja2rj) {
  * @return {string} romaji
  */
 function hiragana2romaji(kana) {
-  return kana2romaji(kana, 'hiragana', DATA['hiragana']['ja2rj']);
+  return kana2romaji(kana, 'hiragana', KANA['hiragana']['ja2rj']);
 }
 
 /**
@@ -63,5 +63,5 @@ function hiragana2romaji(kana) {
  * @return {string} romaji
  */
 function katakana2romaji(kana) {
-  return kana2romaji(kana, 'katakana', DATA['katakana']['ja2rj']);
+  return kana2romaji(kana, 'katakana', KANA['katakana']['ja2rj']);
 }

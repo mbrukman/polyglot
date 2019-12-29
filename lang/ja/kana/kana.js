@@ -13,8 +13,8 @@
 // limitations under the License.
 
 // DO NOT MODIFY MANUALLY; YOUR CHANGES WILL BE REVERTED!
-// This file was auto-generated via: "./yaml2js.py data.yaml"
-var DATA = {
+// This file was auto-generated via: "./yaml2js.py kana.yaml"
+var KANA = {
   "hiragana": {
     "ja2rj": {
       "\u306b\u3083": "nya",

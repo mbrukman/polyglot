@@ -15,7 +15,7 @@
 var kanaPractice = angular.module('kanaPractice', []);
 
 kanaPractice.controller('KanaPracticeCtrl', ['$scope', function($scope) {
-  $scope.data = DATA;
+  $scope.data = KANA;
 
   $scope.kana = 'hiragana';
 
@@ -33,7 +33,7 @@ kanaPractice.controller('KanaPracticeCtrl', ['$scope', function($scope) {
     var random = Math.floor(
       Math.random() * Object.keys($scope.dict).length);
     $scope.japanese = Object.keys($scope.dict)[random];
-    
+
     $scope.correctAnswer = '';
     $scope.romaji = '';
     document.getElementById('romaji').focus();

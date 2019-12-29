@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #
-# Copyright 2018 Google LLC
+# Copyright 2019 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -26,20 +26,16 @@ try:
 except:
     # Add top-level `third_party/python` directory to the search path.
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', '..',
-        'third_party', 'python'))
+        '..', 'third_party', 'python'))
     import yaml
 
-
-SECTIONS = (
-    'monographs', 'monograph_diacritics',
-    'digraphs', 'digraph_diacritics'
-)
 
 HIRAGANA = 'hiragana'
 KATAKANA = 'katakana'
 
 JA = 'ja'
 RJ = 'rj'
+EN = 'en'
 
 JA2RJ = 'ja2rj'
 
@@ -64,37 +60,16 @@ def addUnique(dict, key, value):
     dict[key] = value
 
 
-def isObsolete(item):
-    return 'obsolete' in item and item['obsolete']
-
-
 def main(argv):
     if len(argv) < 2:
         sys.stderr.write('Syntax: %s [input-file]\n' % argv[0])
         sys.exit(1)
 
     with open(argv[1]) as input_file:
-        input_data = yaml.safe_load(input_file.read())
-
-    output_data = {}
-    output_data[HIRAGANA] = {}
-    hiragana_ja2rj = output_data[HIRAGANA][JA2RJ] = {}
-    for section in SECTIONS:
-        for item in input_data[HIRAGANA][section]:
-            if isObsolete(item):
-                continue
-            addUnique(hiragana_ja2rj, item[JA], item[RJ])
-
-    output_data[KATAKANA] = {}
-    katakana_ja2rj = output_data[KATAKANA][JA2RJ] = {}
-    for section in SECTIONS:
-        for item in input_data[KATAKANA][section]:
-            if isObsolete(item):
-                continue
-            addUnique(katakana_ja2rj, item[JA], item[RJ])
+        yaml_data = yaml.safe_load(input_file.read())
 
     print("""\
-// Copyright 2018 Google LLC
+// Copyright 2019 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -111,7 +86,7 @@ def main(argv):
 // DO NOT MODIFY MANUALLY; YOUR CHANGES WILL BE REVERTED!\
 """)
     print('// This file was auto-generated via: "%s"' % ' '.join(argv))
-    print('var KANA = %s;' % json.dumps(output_data, indent=2,
+    print('var VOCAB = %s;' % json.dumps(yaml_data, indent=2,
         separators=(',', ': ')))
 
 
